@@ -1,0 +1,71 @@
+page-users {
+    #logo_tl{
+        width: 5%;
+        height: 5%;
+        float : left;
+        position : relative;
+    }
+
+    #title {
+        color: #243949;
+        // position: relative;
+        top: 0;
+        // left: 0;
+        width: 100%;
+        height: 100%;
+        text-align: left;
+    }
+
+    #user {
+        float: right;
+        // padding-top: 10px;
+    }
+
+    #control {
+       
+        border-right: 1px solid #c0c0c0;
+        height: 100%;
+        width: 20%;
+        position: absolute;
+        left: 0 !important;
+    }
+
+    .it_sidebar{
+        margin-top:7%;
+    }
+
+    #content {
+        // background-color: red;
+        height: 100%;
+        width: 80%;
+        position: absolute;
+        right: 0%;
+    }
+
+    #ed, #del{
+        font-size: 23px;
+    }
+    
+    #userTable {
+        font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+        border-collapse: collapse;
+        width: 100%;
+    }
+    
+    #userTable td, #userTable th {
+        border: 1px solid #ddd;
+        padding: 8px;
+    }
+    
+    #userTable tr:nth-child(even){background-color: #f2f2f2;}
+    
+    #userTable tr:hover {background-color: #ddd;}
+    
+    #userTable th {
+        padding-top: 12px;
+        padding-bottom: 12px;
+        text-align: center;
+        background-color: #3f5d75;
+        color: white;
+    }
+}

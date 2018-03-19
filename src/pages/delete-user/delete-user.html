@@ -1,0 +1,30 @@
+<!--
+  Generated template for the DeleteUserPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+    <ion-navbar color="primary">
+      <ion-title text-center>Delete {{user?.firstname}}</ion-title>
+    </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+  <ion-item text-center>
+      Are You Sure You Want To Delete <strong>{{user?.firstname}}</strong> From The System?
+  </ion-item>
+    <ion-grid>
+        <ion-row justify-content-end>
+          <ion-col col-3>
+            <button ion-button block clear (click)="cancel()">No</button>
+          </ion-col>
+          <ion-col col-3>
+              <button ion-button block clear (click)="deleteUser(user)">Yes</button>
+            </ion-col>
+        </ion-row>
+      </ion-grid>
+</ion-content>
