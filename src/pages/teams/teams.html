@@ -1,0 +1,108 @@
+<!--
+  Generated template for the AdminHomePage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar secondary hideBackButton="true" id="navbar">
+    <!-- <img src="../../assets/imgs/logo_only.png" alt="Logo" class="logo"> -->
+   
+
+      <ion-grid>
+          <ion-row justify-content-between>
+            <ion-col text-left> 
+                <ion-title id="title"><ion-avatar item-start>
+                    <img src="../../assets/imgs/logo_only.png" id="logo_tl">
+                  </ion-avatar>TimeLine</ion-title>
+            </ion-col>
+            <ion-col text-right>
+                <ion-title id="user">Kojo Nyamekye Anyinam-Boateng</ion-title>
+            </ion-col>
+          </ion-row>
+        </ion-grid>
+  
+    
+      
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content>
+  <div id="content">
+      <ion-fab right bottom>
+          <button ion-fab color="secondary" (click)="addTeam()"><ion-icon name="md-add"></ion-icon></button>
+      </ion-fab>
+      <ion-grid>
+          <ion-row>
+              <ion-col col-4>
+                  <ion-card color="primary_light">
+                      <ion-card-content>
+                        <h1 id="prj" text-center><strong>Alpha</strong></h1>
+                      
+
+                      <ion-row>
+                          <ion-col col-3 >
+                              <ion-item color="primary_light">
+                                  <ion-icon name="md-contact" item-start></ion-icon>
+                                  <h1 item-start>5</h1>
+                              </ion-item>
+                          </ion-col>
+                          <ion-col col-3 >
+                              <ion-item color="primary_light">
+                                  <ion-icon name="md-folder" item-start></ion-icon>
+                                  <h1 item-start>50</h1>
+                              </ion-item>
+                          </ion-col>
+
+                          <ion-col col-4 offset-2>
+                              <ion-item color="primary_light" id="ed">
+                                  <ion-icon name="md-create" color="edit" item-start text-right></ion-icon>
+                                  <ion-icon name="md-trash" color="danger" item-end text-right></ion-icon>
+                              </ion-item>
+                          </ion-col>
+                        </ion-row>
+                      </ion-card-content>
+                    </ion-card>
+              </ion-col>
+          </ion-row>
+      </ion-grid>
+
+      
+  </div>
+
+  <div id="control">
+      <ion-list no-lines>
+          <ion-item class="it_sidebar" (click)="adminHomePage()">
+            <ion-icon name="md-apps" color="primary"  item-start></ion-icon>
+              Dashboard
+          </ion-item>
+
+          <ion-item class="it_sidebar" (click)="users()">
+              <ion-icon name="md-contact" color="primary" item-start></ion-icon>
+                Users
+          </ion-item>
+
+          <ion-item class="it_sidebar" color="primary_light">
+              <ion-icon name="md-people" item-start></ion-icon>
+                Teams
+          </ion-item>
+
+          <ion-item class="it_sidebar" (click)="projects()">
+              <ion-icon name="ios-folder" color="primary" item-start></ion-icon>
+                Projects
+          </ion-item>
+      </ion-list>
+
+      <ion-footer color="primary">
+          <ion-toolbar color="primary">
+          <!-- <ion-item class="it_sidebar" color="primary" > -->
+              <button ion-button icon-left clear large full color="light" (click)="signOut()"><ion-icon name="md-lock" item-start></ion-icon>
+              Sign Out</button>
+              </ion-toolbar>
+          <!-- </ion-item> -->
+      </ion-footer>
+  </div>
+</ion-content>

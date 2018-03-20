@@ -20,18 +20,11 @@
             </ion-col>
           </ion-row>
         </ion-grid>
-
-   
-    
-      
   </ion-navbar>
-
 </ion-header>
-
 
 <ion-content>
   <div id="content">
-
     <table id="userTable">
         <tr>
             <th>Firstname</th>
@@ -39,7 +32,6 @@
             <th>Department</th>
             <th>Position</th>
             <th>Date Employed</th>
-            <!-- <th></th> -->
         </tr>
         <tr *ngFor = "let user of users$ | async">
             <td>{{user.firstname}}</td>
@@ -62,9 +54,7 @@
                         </ion-col>
                     </ion-row>
                 </ion-grid>
-                
             </td>
-            
         </tr>
     </table>
 
@@ -72,7 +62,7 @@
             <button ion-fab color="primary"><ion-icon name="arrow-dropleft"></ion-icon></button>
             <ion-fab-list side="left">
                 <button ion-fab color="secondary" (click)="addUser()"><ion-icon name="md-add"></ion-icon></button>
-                <button ion-fab color="danger" (click)="removeAllUser()"><ion-icon name="md-trash"></ion-icon></button>
+                <button ion-fab color="danger" (click)="deleteAllUsers()"><ion-icon name="md-trash"></ion-icon></button>
             </ion-fab-list>
           </ion-fab>
   </div>
@@ -83,7 +73,7 @@
 
   <div id="control">
       <ion-list no-lines>
-          <ion-item class="it_sidebar" (click)="dashboardPage()">
+          <ion-item class="it_sidebar">
             <ion-icon name="md-apps" color="primary"  item-start></ion-icon>
               Dashboard
           </ion-item>
@@ -93,12 +83,12 @@
                 Users
           </ion-item>
 
-          <ion-item class="it_sidebar" (click)="teams()">
+          <ion-item class="it_sidebar">
               <ion-icon name="md-people" color="primary" item-start></ion-icon>
                 Teams
           </ion-item>
 
-          <ion-item class="it_sidebar" (click)="projects()">
+          <ion-item class="it_sidebar">
               <ion-icon name="ios-folder" color="primary" item-start></ion-icon>
                 Projects
           </ion-item>

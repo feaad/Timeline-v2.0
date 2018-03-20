@@ -9,6 +9,7 @@ import { DeleteUserPage } from '../delete-user/delete-user';
 import { UserService } from '../../services/user/user.service';
 import { Observable } from 'rxjs/Observable';
 import { User } from '../../models/user/user.model';
+import { ToastService } from '../../services/toast/toast.service';
 
 /**
  * Generated class for the UsersPage page.
@@ -26,7 +27,12 @@ export class UsersPage {
 
   users$: Observable<User[]>;
 
-  constructor(public modalCtrl: ModalController, public navCtrl: NavController, public navParams: NavParams, private userClass: UserService) {
+  constructor(
+    public modalCtrl: ModalController, 
+    public navCtrl: NavController, 
+    public navParams: NavParams, 
+    private userClass: UserService,
+    private toast: ToastService) {
     this.users$ = this.userClass
       .getUser()
       .snapshotChanges()
@@ -55,5 +61,11 @@ export class UsersPage {
   deleteUser(user: User) {
     let deleteUserModal = this.modalCtrl.create(DeleteUserPage, {'user': user});
     deleteUserModal.present();
+  }
+
+  deleteAllUsers() {
+    this.userClass.deleteAllUsers().then(() => {
+      this.toast.show(`All Users Have Been Deleted`)
+    });
   }
 }

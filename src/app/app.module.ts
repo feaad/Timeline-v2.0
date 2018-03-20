@@ -15,6 +15,7 @@ import { UserService } from '../services/user/user.service';
 import { EditUserPage } from '../pages/edit-user/edit-user';
 import { ToastService } from '../services/toast/toast.service';
 import { DeleteUserPage } from '../pages/delete-user/delete-user';
+import { AddTeamPage } from '../pages/add-team/add-team';
 
 
 @NgModule({
@@ -23,7 +24,8 @@ import { DeleteUserPage } from '../pages/delete-user/delete-user';
     HomePage,
     EditUserPage,
     AddUserPage,
-    DeleteUserPage
+    DeleteUserPage,
+    AddTeamPage
   ],
   imports: [
     BrowserModule,
@@ -37,7 +39,8 @@ import { DeleteUserPage } from '../pages/delete-user/delete-user';
     HomePage,
     EditUserPage,
     AddUserPage,
-    DeleteUserPage
+    DeleteUserPage,
+    AddTeamPage
   ],
   providers: [
     StatusBar,

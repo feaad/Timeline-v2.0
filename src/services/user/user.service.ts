@@ -26,4 +26,8 @@ export class UserService {
     deleteUser(user: User){
         return this.userRef.remove(user.key);
     }
+
+    deleteAllUsers(){
+        return this.userRef.remove();
+    }
 }
