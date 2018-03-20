@@ -23,15 +23,15 @@
         </ion-item>
           <ion-item class="rounded">
             <ion-label >Email</ion-label>
-            <ion-input [(ngModel)] ="uemail" type="email" required #em></ion-input>
+            <ion-input [(ngModel)] ="system_user.email" type="email" required #em></ion-input>
           </ion-item>
         
           <ion-item class="rounded">
             <ion-label>Password</ion-label>
-            <ion-input [(ngModel)]="pass" type="password" required #pass1></ion-input>
+            <ion-input [(ngModel)]="system_user.password" type="password" required #pass1></ion-input>
           </ion-item>
           <ion-row id = "sign">
-            <button ion-button large full (click)="dashboardPage()">Sign In</button>
+            <button ion-button large full (click)="signIn(system_user)">Sign In</button>
           </ion-row>
           
       

@@ -1,12 +1,12 @@
-
-import { UsersPage } from '../users/users';
-
-import { Component, ViewChild } from '@angular/core';
-import { NavController} from 'ionic-angular';
+import { Component } from '@angular/core';
+import { NavController } from 'ionic-angular';
 import { DashboardPage } from '../dashboard/dashboard';
-import {AngularFireAuth } from 'angularfire2/auth';
+import { AngularFireAuth } from 'angularfire2/auth';
 import { ToastService } from '../../services/toast/toast.service';
 import { LoadingController } from 'ionic-angular';
+import { SystemUser } from '../../models/system_user/system_user.model';
+
+import { UsersPage } from '../users/users';
 
 @Component({
   selector: 'page-home',
@@ -14,10 +14,13 @@ import { LoadingController } from 'ionic-angular';
 })
 export class HomePage {
 
-	@ViewChild('em') user;
-	@ViewChild('pass1') upass;
+  system_user = {} as SystemUser;
 
-  constructor(private fire: AngularFireAuth, private toast: ToastService, public loadingCtrl: LoadingController, public navCtrl: NavController) {
+  constructor(
+    private auth: AngularFireAuth, 
+    private toast: ToastService, 
+    public loadingCtrl: LoadingController, 
+    public navCtrl: NavController) {
 
   }
 
@@ -30,7 +33,7 @@ export class HomePage {
     loading.present();
 
     setTimeout(() => {
-      this.navCtrl.push('DashboardPage');
+      this.navCtrl.push('UsersPage');
     }, 100);
 
     setTimeout(() => {
@@ -38,15 +41,26 @@ export class HomePage {
     }, 1000);
   }
 
-  dashboardPage(): void {
-  	this.fire.auth.signInWithEmailAndPassword(this.user.value, this.upass.value)
-  	.then(data => {
-     this.presentLoadingText();
-     this.toast.show(`Login successful`);
-     this.navCtrl.push('UsersPage');  
-  	});
-  }
+  // dashboardPage(): void {
+  //   this.presentLoadingText();
+  // 	this.fire.auth.signInWithEmailAndPassword(this.user.value, this.upass.value)
+  // 	.then(data => {
+  //    this.toast.show(`Login successful`);
+  //    this.navCtrl.push('UsersPage');  
+  // 	});
+  // }
 
-  	
+  async signIn(system_user: SystemUser){
+    try {
+      
+      const result = this.auth.auth.signInWithEmailAndPassword(system_user.email, system_user.password);
+      if (result){
+        this.presentLoadingText();
+        // this.navCtrl.push('UsersPage'); 
+      }
+    } catch(e){
+      console.error(e);
+    }
+  }
 
 }

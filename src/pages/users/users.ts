@@ -11,6 +11,7 @@ import { UserService } from '../../services/user/user.service';
 import { Observable } from 'rxjs/Observable';
 import { User } from '../../models/user/user.model';
 import { ToastService } from '../../services/toast/toast.service';
+import { AngularFireAuth } from 'angularfire2/auth';
 
 /**
  * Generated class for the UsersPage page.
@@ -29,6 +30,7 @@ export class UsersPage {
   users$: Observable<User[]>;
 
   constructor(
+    private auth: AngularFireAuth,
     public modalCtrl: ModalController, 
     public navCtrl: NavController, 
     public navParams: NavParams, 
@@ -71,6 +73,7 @@ export class UsersPage {
   }
 
   signOut(): void {
+    this.auth.auth.signOut();
     this.navCtrl.push(HomePage);
 }
 }
