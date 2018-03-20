@@ -1,7 +1,10 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { UsersPage } from '../users/users';
+
 import { TeamsPage } from '../teams/teams'
+import { HomePage } from '../home/home';
+
 
 /**
  * Generated class for the DashboardPage page.

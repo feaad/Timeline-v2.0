@@ -5,6 +5,7 @@ import { ModalController } from 'ionic-angular';
 import { AddUserPage } from '../add-user/add-user';
 import { EditUserPage } from '../edit-user/edit-user';
 import { DeleteUserPage } from '../delete-user/delete-user';
+import { HomePage } from '../home/home';
 
 import { UserService } from '../../services/user/user.service';
 import { Observable } from 'rxjs/Observable';
@@ -68,4 +69,8 @@ export class UsersPage {
       this.toast.show(`All Users Have Been Deleted`)
     });
   }
+
+  signOut(): void {
+    this.navCtrl.push(HomePage);
+}
 }
